@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -16,7 +17,9 @@ return new class extends Migration
             $table->string("nomeProduto", 100);
             $table->string("descricaoProduto", 255);
             $table->unsignedBigInteger("idCategoria");
+            $table->unsignedBigInteger("idFornecedor");
             $table->foreign("idCategoria")->references("id")->on("categoria");
+            $table->foreign("idFornecedor")->references("id")->on("fornecedor");
             $table->decimal("precoProduto", 10, 2);
         });
     }

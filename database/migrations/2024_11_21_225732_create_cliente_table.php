@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -11,10 +12,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('estoque', function (Blueprint $table) {
+        Schema::create('cliente', function (Blueprint $table) {
             $table->id();
-            $table->foreign("id")->references("id")->on("produto");
-            $table->integer('quantidade');
+            $table->string('nome');
+            $table->string('cpf');
+            $table->string('endereco');
+            $table->string('telefone');
+            $table->string('email');
         });
     }
 
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('estoque');
+        Schema::dropIfExists('cliente');
     }
 };

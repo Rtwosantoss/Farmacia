@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -13,7 +14,10 @@ return new class extends Migration
     {
         Schema::create('fornecedor', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nomeFornecedor');
+            $table->string('cnpj');
+            $table->string('endereco');
+            $table->string('telefone');
         });
     }
 
